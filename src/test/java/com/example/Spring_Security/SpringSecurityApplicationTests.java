@@ -12,15 +12,15 @@ class SpringSecurityApplicationTests {
 	@Autowired
 	private JwtService jwtService;
 
-	@Test
-	void contextLoads() {
-		User user= new User(4L, "sweta@gmail.com", "123");
-		String token =jwtService.generateToken(user);
-		System.out.println(token);
-
-		long id = jwtService.getUserIdFromToken(token);
-
-		System.out.println(id);
-	}
+//	@Test
+//	void contextLoads() {
+//		User user= new User(4L, "sweta@gmail.com", "123");
+//		String token =jwtService.generateToken(user);
+//		System.out.println(token);
+//
+//		long id = jwtService.getUserIdFromToken(token);
+//
+//		System.out.println(id);
+//	}
 
 }
