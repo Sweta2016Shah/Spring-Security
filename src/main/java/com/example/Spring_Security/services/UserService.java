@@ -1,6 +1,5 @@
 package com.example.Spring_Security.services;
 
-import com.example.Spring_Security.dto.LoginDto;
 import com.example.Spring_Security.dto.SignUpDto;
 import com.example.Spring_Security.dto.UserDto;
 import com.example.Spring_Security.entities.User;
@@ -33,6 +32,11 @@ public class UserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository.findByEmail(username)
                 .orElseThrow(()->new ResourceNotFoundException("User with this email not found: "+username));
+    }
+
+    public User getUserById(Long id){
+        return userRepository.findById(id)
+                .orElseThrow(()->new ResourceNotFoundException("User with id: "+ id + "not found: "));
     }
 
     public UserDto signUp(SignUpDto signUpDto) {
